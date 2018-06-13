@@ -1,0 +1,14 @@
+<div>
+	<div>
+		<label>Nombre:</label>
+		<div>----</div>
+	</div>
+	<div>
+		<label>Descripcion:</label>
+		<div>----</div>
+	</div>
+	<div>
+		<button>Editar</button>
+		<button>Cancelar</button>
+	</div>
+</div>
