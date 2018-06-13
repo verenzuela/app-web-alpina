@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\pais;
+use Illuminate\Support\Facades\DB;
 
 class PaisController extends Controller
 {
@@ -14,7 +16,12 @@ class PaisController extends Controller
      */
     public function index()
     {
-        //    
+        
+        //$paises = DB::table('pais');
+        $paises = pais::get();
+
+        return view('admin/pais/index', [ "paises" => $paises ] );
+
     }
 
     /**
@@ -24,7 +31,7 @@ class PaisController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/pais/new');
     }
 
     /**
@@ -35,7 +42,12 @@ class PaisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        pais::create([
+            'nombre' => $request['nombre'],
+            'descripcion' => $request['descripcion']
+        ]);
+
+        return redirect()->intended('/pais/index');
     }
 
     /**

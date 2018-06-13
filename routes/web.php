@@ -18,10 +18,10 @@ Route::get('/', function () {
 
 Route::prefix('/pais')->group(function(){
 
+	Route::get('/index', 'Admin\PaisController@index')->name('pais.index');
 
-	Route::get('/show', function(){ return view('admin.pais.show'); });
-
-	Route::get('/index', function(){ return view('admin.pais.index'); });
+	Route::get('/new', 'Admin\PaisController@create')->name('pais.new');
+	Route::post('/new', 'Admin\PaisController@store')->name('pais.add');
 
 });
 
