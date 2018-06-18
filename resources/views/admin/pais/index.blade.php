@@ -1,12 +1,15 @@
 
-<div>
-	<table border="1">
+<link rel="stylesheet" type="text/css" href="{{ asset('/bower_components/boostrap/dist/css/bootstrap.min.css') }}">
+
+
+<div class="container table-bordered">
+	<table class="table responsive-lg table-hover">
 		<thead>
-			<tr>
+			<tr class="table-dark">
 				<td>Id</td>
 				<td>Nombre</td>
-				<td>Descripcion</td>
-				<td>Accion</td>
+				<td>Descripción</td>
+				<td>Acción</td>
 			</tr>
 		</thead>
 
@@ -19,8 +22,8 @@
 					<td>{{ $pais->nombre }}</td>
 					<td>{{ $pais->descripcion }}</td>
 					<td>
-						<button>Editar</button>
-						<button>Eliminar</button>
+						<button class="btn btn-dark">Editar</button>
+						<button class="btn btn-danger">Eliminar</button>
 					</td>
 				</tr>
 
@@ -30,9 +33,11 @@
 		</tbody>
 
 	</table>
-</div>
-<div>
-	
-    <a href="{{ route('pais.new') }}">Agregar nuevo</a>
 
+	<div>
+	
+    	<a href="{{ route('pais.new') }}" class="btn btn-primary">Agregar nuevo</a>
+
+	</div>
 </div>
+

@@ -13,7 +13,7 @@ class CrearTablaPedidos extends Migration
      */
     public function up()
     {
-        Schema::create('pedidos', function (Blueprint $table) {
+        Schema::create('pedido', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('id_producto');
@@ -30,6 +30,6 @@ class CrearTablaPedidos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('pedido');
     }
 }

@@ -13,7 +13,7 @@ class CrearTablasTiendas extends Migration
      */
     public function up()
     {
-        Schema::create('tiendas', function (Blueprint $table) {
+        Schema::create('tienda', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('nombre');
@@ -30,6 +30,6 @@ class CrearTablasTiendas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tiendas');
+        Schema::dropIfExists('tienda');
     }
 }

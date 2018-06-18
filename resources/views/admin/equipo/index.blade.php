@@ -11,18 +11,17 @@
 
 		<tbody>
 
-			@foreach ($ciudades as $ciudad)
+			@foreach ($equipos as $equipo)
 
-			<tr>
-				<td>{{ $ciudad->id }}</td>
-					<td>{{ $ciudad->nombre }}</td>
-					<td>{{ $ciudad->descripcion }}</td>
+				<tr>
+					<td>{{ $equipo->id }}</td>
+					<td>{{ $equipo->nombre }}</td>
+					<td>{{ $equipo->descripcion }}</td>
 					<td>
 						<button>Editar</button>
 						<button>Eliminar</button>
 					</td>
-			</tr>
-
+				</tr>
 
 			@endforeach
 
@@ -31,7 +30,9 @@
 
 	</table>
 </div>
+
 <div>
 	
-	<a href="{{ route('ciudad.new') }}">Agregar nuevo</a>
+    <a href="{{ route('equipo.new') }}">Agregar nuevo</a>
+
 </div>

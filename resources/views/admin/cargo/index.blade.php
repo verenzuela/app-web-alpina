@@ -10,19 +10,29 @@
 		</thead>
 
 		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Venezela</td>
-				<td>Descripcion</td>
-				<td>
-					<button>Editar</button>
-					<button>Eliminar</button>
-				</td>
-			</tr>
+
+
+			@foreach ($cargos as $cargo)
+
+				<tr>
+					<td>{{ $cargo->id }}</td>
+					<td>{{ $cargo->nombre }}</td>
+					<td>{{ $cargo->descripcion }}</td>
+					<td>
+						<button>Editar</button>
+						<button>Eliminar</button>
+					</td>
+				</tr>
+
+			@endforeach
+
+
 		</tbody>
 
 	</table>
 </div>
 <div>
-	<button>Agregar nuevo</button>
+	
+    <a href="{{ route('cargo.new') }}">Agregar nuevo</a>
+
 </div>

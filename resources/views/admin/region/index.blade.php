@@ -1,3 +1,4 @@
+
 <div>
 	<table border="1">
 		<thead>
@@ -10,19 +11,25 @@
 		</thead>
 
 		<tbody>
+
+			@foreach ($regiones as $region)
+
 			<tr>
-				<td>1</td>
-				<td>Venezela</td>
-				<td>Descripcion</td>
-				<td>
-					<button>Editar</button>
-					<button>Eliminar</button>
-				</td>
+				<td>{{ $region->id }}</td>
+					<td>{{ $region->nombre }}</td>
+					<td>{{ $region->descripcion }}</td>
+					<td>
+						<button>Editar</button>
+						<button>Eliminar</button>
+					</td>
 			</tr>
+
+			@endforeach
+
 		</tbody>
 
 	</table>
 </div>
 <div>
-	<button>Agregar nuevo</button>
+	<a href="{{ route('region.new') }}">Agregar nuevo</a>
 </div>
