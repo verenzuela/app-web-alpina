@@ -22,8 +22,9 @@
 					<td>{{ $pais->nombre }}</td>
 					<td>{{ $pais->descripcion }}</td>
 					<td>
-						<button class="btn btn-dark">Editar</button>
-						<button class="btn btn-danger">Eliminar</button>
+						<a href="{{ route('pais.edit') }}" class="btn btn-primary">editar</a>
+						<!--button class="btn btn-dark btn-xs">Editar</button-->
+						<!--button class="btn btn-danger btn-xs ">Eliminar</button-->
 					</td>
 				</tr>
 
@@ -40,4 +41,10 @@
 
 	</div>
 </div>
+
+<script type="text/javascript" src="{{ asset('/bower_components/jquery/dist/jquery.js') }}"></script><
+<!--script type="text/javascript" src="{{ asset('/bower_components/popper.js/dist/popper.min.js') }}"></script-->
+
+<script type="text/javascript" src="{{ asset('/bower_components/boostrap/dist/js/bootstrap.js') }}"></script>
+
 

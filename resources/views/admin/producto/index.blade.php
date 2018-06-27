@@ -6,41 +6,44 @@
 	<table class="table responsive-lg table-hover">
 		<thead>
 			<tr class="table-dark">
-				<td>Id</td>
 				<td>Nombre</td>
 				<td>Descripcion</td>
-				<td>Accion</td>
+				<td>Costo</td>
+				<td>Ean</td>
 			</tr>
 		</thead>
 
 		<tbody>
 
-			@foreach ($equipos as $equipo)
+			@foreach ($productos as $producto)
 
-				<tr>
-					<td>{{ $equipo->id }}</td>
-					<td>{{ $equipo->nombre }}</td>
-					<td>{{ $equipo->descripcion }}</td>
+			<tr>
+				<td>{{ $producto->id }}</td>
+					<td>{{ $producto->descripcion }}</td>
+					<td>{{ $producto->costo }}</td>
+					<td>{{ $producto->ean }}</td>
 					<td>
 						<button class="btn btn-dark">Editar</button>
 						<button class="btn btn-danger">Eliminar</button>
 					</td>
-				</tr>
+			</tr>
+
 
 			@endforeach
 
 
 		</tbody>
+		
 
-	</table>
-</div>
-
-<div>
+	</table><div>
 	
-    <a href="{{ route('equipo.new') }}" class="btn btn-primary" >Agregar nuevo</a>
+    	<a href="{{ route('producto.new') }}" class="btn btn-primary">Agregar nuevo</a>
 
+	</div>
 </div>
-<script type="text/javascript" src="{{ asset('/bower_components/jquery/dist/jquery.js') }}"></script>
+
+
+<script type="text/javascript" src="{{ asset('/bower_components/jquery/dist/jquery.js') }}"></script><
 <!--script type="text/javascript" src="{{ asset('/bower_components/popper.js/dist/popper.min.js') }}"></script-->
 
 <script type="text/javascript" src="{{ asset('/bower_components/boostrap/dist/js/bootstrap.js') }}"></script>

@@ -22,7 +22,8 @@ Route::prefix('/pais')->group(function(){
 
 	Route::get('/new', 'Admin\PaisController@create')->name('pais.new');
 	Route::post('/new', 'Admin\PaisController@store')->name('pais.add');
-
+	Route::get('/pais', 'Admin\PaisController@edit')->name('pais.edit');
+   
 });
 
 Route::prefix('/cargo')->group(function(){
@@ -82,45 +83,61 @@ Route::prefix('/equipo')->group(function(){
 
 });
 
-
-
 Route::prefix('/organizacion')->group(function(){
 
-	Route::get('/edit', function(){ return view('admin.organizacion.edit'); });
+	Route::get('/index', 'Admin\OrganizacionController@index')->name('organizacion.index');
 
-	Route::get('/new', function(){ return view('admin.organizacion.new'); });
+	Route::get('/new', 'Admin\OrganizacionController@create')->name('organizacion.new');
+	Route::post('/new', 'Admin\OrganizacionController@store')->name('organizacion.add');
 
-	Route::get('/show', function(){ return view('admin.organizacion.show'); });
+//Route::prefix('/organizacion')->group(function(){
 
-	Route::get('/index', function(){ return view('admin.organizacion.index'); });
+//	Route::get('/edit', function(){ return view('admin.organizacion.edit'); });
 
-});
+//	Route::get('/new', function(){ return view('admin.organizacion.new'); });
 
+//	Route::get('/show', function(){ return view('admin.organizacion.show'); });
 
-
-Route::prefix('/pedidos')->group(function(){
-
-	Route::get('/edit', function(){ return view('admin.pedidos.edit'); });
-
-	Route::get('/new', function(){ return view('admin.pedidos.new'); });
-
-	Route::get('/show', function(){ return view('admin.pedidos.show'); });
-
-	Route::get('/index', function(){ return view('admin.pedidos.index'); });
+//	Route::get('/index', function(){ return view('admin.organizacion.index'); });
 
 });
 
 
+Route::prefix('/pedido')->group(function(){
+
+	Route::get('/index', 'Admin\PedidoController@index')->name('pedido.index');
+
+	Route::get('/new', 'Admin\PedidoController@create')->name('pedido.new');
+	Route::post('/new', 'Admin\PedidoController@store')->name('pedido.add');
+//Route::prefix('/pedidos')->group(function(){
+
+//	Route::get('/edit', function(){ return view('admin.pedidos.edit'); });
+
+//	Route::get('/new', function(){ return view('admin.pedidos.new'); });
+
+//	Route::get('/show', function(){ return view('admin.pedidos.show'); });
+
+//	Route::get('/index', function(){ return view('admin.pedidos.index'); });
+
+});
 
 Route::prefix('/producto')->group(function(){
 
-	Route::get('/edit', function(){ return view('admin.producto.edit'); });
+Route::get('/index', 'Admin\ProductoController@index')->name('producto.index');
 
-	Route::get('/new', function(){ return view('admin.producto.new'); });
+Route::get('/new', 'Admin\ProductoController@create')->name('producto.new');
+Route::post('/new', 'Admin\ProductoController@store')->name('producto.add');
 
-	Route::get('/show', function(){ return view('admin.producto.show'); });
 
-	Route::get('/index', function(){ return view('admin.producto.index'); });
+//Route::prefix('/producto')->group(function(){
+
+//	Route::get('/edit', function(){ return view('admin.producto.edit'); });
+
+	//Route::get('/new', function(){ return view('admin.producto.new'); });
+
+//	Route::get('/show', function(){ return view('admin.producto.show'); });
+
+//	Route::get('/index', function(){ return view('admin.producto.index'); });
 
 });
 
@@ -144,16 +161,21 @@ Route::prefix('/region')->group(function(){
 
 });
 
-
 Route::prefix('/sobretiempo')->group(function(){
 
-	Route::get('/edit', function(){ return view('admin.sobretiempo.edit'); });
+	Route::get('/index', 'Admin\SobretiempoController@index')->name('sobretiempo.index');
 
-	Route::get('/new', function(){ return view('admin.sobretiempo.new'); });
+	Route::get('/new', 'Admin\SobretiempoController@create')->name('sobretiempo.new');
+	Route::post('/new', 'Admin\SobretiempoController@store')->name('sobretiempo.add');
+//Route::prefix('/sobretiempo')->group(function(){
 
-	Route::get('/show', function(){ return view('admin.sobretiempo.show'); });
+//	Route::get('/edit', function(){ return view('admin.sobretiempo.edit'); });
 
-	Route::get('/index', function(){ return view('admin.sobretiempo.index'); });
+///	Route::get('/new', function(){ return view('admin.sobretiempo.new'); });
+
+	//Route::get('/show', function(){ return view('admin.sobretiempo.show'); });
+
+	//Route::get('/index', function(){ return view('admin.sobretiempo.index'); });
 
 });
 
@@ -200,6 +222,19 @@ Route::prefix('/trabajador')->group(function(){
 //	Route::get('/show', function(){ return view('admin.trabajadores.show'); });
 
 //	Route::get('/index', function(){ return view('admin.trabajadores.index'); });
+
+});
+
+
+Route::prefix('/tienda')->group(function(){
+
+	Route::get('/index', 'Admin\TiendaController@index')->name('tienda.index');
+
+	Route::get('/new', 'Admin\TiendaController@create')->name('tienda.new');
+	Route::post('/new', 'Admin\TiendaController@store')->name('tienda.add');
+
+
+
 
 });
 

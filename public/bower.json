@@ -1,0 +1,23 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/verenzuela/app-web-alpina",
+  "authors": [
+    "yeraldnavarro <39924870+yeraldnavarro@users.noreply.github.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "boostrap": "^4.1.1",
+    "popper.js": "^1.14.3",
+    "holderjs": "^2.9.4",
+    "jquery": "^3.3.1"
+  }
+}

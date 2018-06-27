@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/bower_components/boostrap/dist/css/bootstrap.min.css') }}">
 
 
-<H3>FORMULARIO DE PERSONAL Y EVENTOS</H3>
+<H3>ACTUALIZAR REGISTRO </H3>
 
 
 <form id="pais_add" method="POST" action="{{ route('pais.add') }}">
@@ -20,7 +20,7 @@
   <label for=tiempo>Fecha</label> <input type="datetime" id="tiempo" class="form-control" placeholder="Introduzca día">
   </div -->
 
-	<button type="submit" class="btn btn-primary">Agregar</button>
+	<button type="submit" class="btn btn-primary">Actializar Paises</button>
 
    	<a href="{{ route('pais.index') }}" class="btn btn-danger">Cancelar</a>
 </form>
@@ -29,7 +29,4 @@
 <!--script type="text/javascript" src="{{ asset('/bower_components/popper.js/dist/popper.min.js') }}"></script-->
 
 <script type="text/javascript" src="{{ asset('/bower_components/boostrap/dist/js/bootstrap.js') }}"></script>
-
-
-
 

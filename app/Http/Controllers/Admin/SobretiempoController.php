@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\tienda;
+use App\sobretiempo;
 use Illuminate\Support\Facades\DB;
-
-class TiendaController extends Controller
+               
+class SobretiempoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,8 @@ class TiendaController extends Controller
      */
     public function index()
     {
-         $tiendas = tienda::get();
-
-        return view('admin/tienda/index', [ "tiendas" => $tiendas ] );
+         $sobretiempos = sobretiempo::get();
+     return view('admin/sobretiempo/index', [ "sobretiempos" => $sobretiempos ] );
 
     }
 
@@ -29,7 +28,7 @@ class TiendaController extends Controller
      */
     public function create()
     {
-      return view('admin/tienda/new');  //
+     return view('admin/sobretiempo/new'); 
     }
 
     /**
@@ -40,14 +39,15 @@ class TiendaController extends Controller
      */
     public function store(Request $request)
     {
-        tienda::create([
-            'nombre' => $request['nombre'],
-            'direccion' => $request['direccion'],
-             'id_formato' => $request['id_formato'],
-            'cod_tienda' => $request['cod_tienda'],
+         sobretiempo::create([
+            'fecha' => $request['fecha'],
+            'hora_de_entrada' => $request['hora_de_entrada'],
+            'hora_de_salida' => $request['hora_de_salida'],
+            'tiempo' => $request['tiempo'],
+            'cod_trabajador' => $request['cod_trabajador'],
         ]);
 
-        return redirect()->intended('/tienda/index');//
+        return redirect()->intended('/sobretiempo/index');
     }
 
     /**

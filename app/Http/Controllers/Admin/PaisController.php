@@ -22,6 +22,8 @@ class PaisController extends Controller
 
         return view('admin/pais/index', [ "paises" => $paises ] );
 
+
+
     }
 
     /**
@@ -69,7 +71,11 @@ class PaisController extends Controller
      */
     public function edit($id)
     {
-        //
+      $paises = pais::find($id);
+
+
+      return view('actualizar-regitro',['pais => $paises']);
+      //return view('admin.pais.edit')->whit ('pais,$paises');
     }
 
     /**
@@ -81,7 +87,8 @@ class PaisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     $paises = pais::find($id);  
+     $paises = pais::fill     ($id); 
     }
 
     /**

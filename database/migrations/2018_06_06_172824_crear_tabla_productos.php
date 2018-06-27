@@ -13,7 +13,7 @@ class CrearTablaProductos extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('producto', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('nombre');
@@ -30,6 +30,6 @@ class CrearTablaProductos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('producto');
     }
 }

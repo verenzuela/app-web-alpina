@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\tienda;
+use App\producto;
 use Illuminate\Support\Facades\DB;
 
-class TiendaController extends Controller
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +16,9 @@ class TiendaController extends Controller
      */
     public function index()
     {
-         $tiendas = tienda::get();
+     $productos = producto::get();
 
-        return view('admin/tienda/index', [ "tiendas" => $tiendas ] );
-
+        return view('admin/producto/index', [ "productos" => $productos ] );   //
     }
 
     /**
@@ -29,7 +28,7 @@ class TiendaController extends Controller
      */
     public function create()
     {
-      return view('admin/tienda/new');  //
+       return view('admin/producto/new');
     }
 
     /**
@@ -40,14 +39,14 @@ class TiendaController extends Controller
      */
     public function store(Request $request)
     {
-        tienda::create([
+        producto::create([
             'nombre' => $request['nombre'],
-            'direccion' => $request['direccion'],
-             'id_formato' => $request['id_formato'],
-            'cod_tienda' => $request['cod_tienda'],
+            'descripcion' => $request['descripcion'],
+            'costo' => $request['costo'],
+            'ean' => $request['ean'],
         ]);
 
-        return redirect()->intended('/tienda/index');//
+        return redirect()->intended('/producto/index');
     }
 
     /**

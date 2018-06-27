@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="{{ asset('/bower_components/boostrap/dist/css/bootstrap.min.css') }}">
+
 <div>
 	<div>
 		<label>Nombre:</label>
