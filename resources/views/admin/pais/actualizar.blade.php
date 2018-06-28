@@ -4,21 +4,24 @@
 <H3>ACTUALIZAR REGISTRO </H3>
 
 
-<form id="pais_add" method="POST" action="{{ route('pais.add') }}">
+<form id="pais_add" method="POST" action="{{ route('pais.update') }}">
 	{{ csrf_field() }}
   <div class="form-group">
    <div>
    <label for="nombre">Nombre y Apellido</label>
-    <input type="nombres" class="form-control" id="nombre" name="nombre" aria-describedby="nombreayuda" placeholder="Introduzca su Nombre">
+    <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="nombreayuda" placeholder="Introduzca su Nombre" value="{{ $pais->nombre }}">
     <small id="nombreAyuda" class="form-text text-muted">Introduzca su primer Nombre y su primer Apellido.</small>
   </div>
   <div class="form-group">
     <label for="descripcion">Descripción</label>
-    <input type="descripcion" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion">
+    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion" value="{{ $pais->descripcion }}">
   </div>
   <!-- div class="form-group">
   <label for=tiempo>Fecha</label> <input type="datetime" id="tiempo" class="form-control" placeholder="Introduzca día">
   </div -->
+
+  <input type="hidden" name="id" id="id" value="{{$pais->id}}">
+
 
 	<button type="submit" class="btn btn-primary">Actializar Paises</button>
 

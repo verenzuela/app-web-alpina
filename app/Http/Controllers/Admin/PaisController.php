@@ -71,10 +71,9 @@ class PaisController extends Controller
      */
     public function edit($id)
     {
-      $paises = pais::find($id);
+      $pais = pais::find($id);
 
-
-      return view('actualizar-regitro',['pais => $paises']);
+      return view('admin/pais/actualizar', [ 'pais' => $pais ] );
       //return view('admin.pais.edit')->whit ('pais,$paises');
     }
 
@@ -85,10 +84,18 @@ class PaisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-     $paises = pais::find($id);  
-     $paises = pais::fill     ($id); 
+
+        $pais = pais::find($request['id']);
+
+        $pais->nombre = $request['nombre'];
+        $pais->descripcion = $request['descripcion'];
+
+        $pais->save();
+
+        //return redirect()->intended('/pais/show', [ 'pais' => $pais ] );
+        return view('admin/pais/show', [ 'pais' => $pais ] );
     }
 
     /**
@@ -99,6 +106,8 @@ class PaisController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pais = pais::find($id);
+        $pais->delete();
+        return redirect()->intended('/pais/index');
     }
 }

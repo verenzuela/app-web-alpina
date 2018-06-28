@@ -1,14 +1,17 @@
 <div>
+
+	<div>Información actualizada correctamente...</div>
+
 	<div>
 		<label>Nombre:</label>
-		<div>----</div>
+		<div>{{ $pais->nombre }}</div>
 	</div>
 	<div>
 		<label>Descripcion:</label>
-		<div>----</div>
+		<div>{{ $pais->descripcion }}</div>
 	</div>
 	<div>
-		<button>Editar</button>
+		<a href="{{ route('pais.edit', [ 'id' => $pais->id ]   ) }}" >editar</a>
 		<button>Cancelar</button>
 	</div>
 </div>

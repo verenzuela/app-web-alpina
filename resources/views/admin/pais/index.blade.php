@@ -22,7 +22,9 @@
 					<td>{{ $pais->nombre }}</td>
 					<td>{{ $pais->descripcion }}</td>
 					<td>
-						<a href="{{ route('pais.edit') }}" class="btn btn-primary">editar</a>
+						<a href="{{ route('pais.edit', [ 'id' => $pais->id ]   ) }}" class="btn btn-primary">editar</a>
+
+						<a href="{{ route('pais.delete', [ 'id' => $pais->id ]   ) }}" class="btn btn-danger">eliminar</a>
 						<!--button class="btn btn-dark btn-xs">Editar</button-->
 						<!--button class="btn btn-danger btn-xs ">Eliminar</button-->
 					</td>
